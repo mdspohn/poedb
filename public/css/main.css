@@ -11,10 +11,9 @@
 ----------------------------------------------- */
 
 html {
-    height: 100%;
+    position: relative;
     width: 100%;
     font-family: Montserrat, sans-serif;
-    background-color: #373741;
     color: #ccc;
 }
 
@@ -35,7 +34,7 @@ a {
 }
 
 .section-title {
-    margin-top: 20px;
+    margin: 30px 0 40px;
     font-size: 24px;
     font-weight: lighter;
     position: relative;
@@ -43,14 +42,15 @@ a {
 .section-title:before {
     content: '';
     width: 100%;
-    border-bottom: 1px solid #777;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(119,119,119,0.4), rgba(119,119,119,0.4));
     position: absolute;
     top: calc(50% + 2px);
     left: 0;
 }
 .section-title span {
     position: relative;
-    padding: 10px 30px 10px 0px;
+    padding: 10px 20px 10px 0px;
     background-color: #373741;
     color: #aaa;
     z-index: 10;
@@ -59,6 +59,21 @@ a {
 .more-info-link {
     text-align: right;
     text-decoration: underline;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.flex > section {
+    width: 45%;
+    margin-top: 20px;
+    min-height: 300px;
+}
+.flex > section:first-child {
+    margin-right: 10%;
 }
 
 /* ---------------------------------
@@ -128,8 +143,6 @@ a {
     position: relative;
     margin-right: 10px;
     color: #aaa;
-    text-transform: lowercase;
-    font-variant: small-caps;
     padding: 20px 10px;
 }
 
@@ -156,6 +169,11 @@ a {
 /* ---------------------------------
 # Landing Page
 ----------------------------------------------- */
+
+.content {
+    background-color: #373741;
+    padding-bottom: 320px;
+}
 
 .landing-search {
     position: relative;
@@ -216,9 +234,6 @@ a {
 
 .suggested-content-wrapper .classes {
     margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
 }
 .suggested-content-wrapper .classes .class {
     position: relative;
@@ -273,3 +288,37 @@ a {
 .suggested-content-wrapper .classes .class.shadow   { background-image: url('../img/art/shadow.png');   }
 .suggested-content-wrapper .classes .class.templar  { background-image: url('../img/art/templar.png');  }
 .suggested-content-wrapper .classes .class.witch    { background-image: url('../img/art/witch.png');    }
+
+
+
+
+/* ---------------------------------
+# Footer
+----------------------------------------------- */
+
+.footer {
+    height: 300px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url('../img/beach.png');
+    background-repeat: no-repeat;
+    background-size: fit;
+    background-position: bottom -700px center;
+    box-shadow: inset 0px 3px  7px  rgba(0,0,0,0.35),
+                inset 0px 10px 50px rgba(0,0,0,0.55);
+}
+
+.footer .disclaimer-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    padding: 20px 20px;
+    background-color: #373741;
+    text-align: center;
+}
+.footer .disclaimer-wrapper a {
+    text-decoration: underline;
+}
