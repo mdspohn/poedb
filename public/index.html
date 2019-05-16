@@ -1,0 +1,66 @@
+<html lang="en">
+    <head>
+        <title>PoEDB | Path of Exile Database</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./css/main.css">
+    </head>
+    <body>
+        <!-- HEADER.HTML -->
+        <section class="header">
+            <section class="top-bar">
+                <section class="content-wrapper title">
+                    <a href="/">PoEDB.<strong>gg</strong></a>
+                    <span>| Path of Exile Tools &amp; Database</span>
+                </section>
+            </section>
+            <section class="bottom-bar">
+                <section class="content-wrapper">
+                    <nav class="navigation">
+                        <a href="#">Database</a>
+                        <a href="#">Builds</a>
+                        <a href="#">Tools</a>
+                    </nav>
+                </section>
+            </section>
+        </section>
+
+        <!-- DYNAMIC CONTENT -->
+        <section class="content">
+            <section class="landing-search">
+                <canvas id="canvas" class="canvas"></canvas>
+                <section class="search-wrapper">
+                    <input type="text" autocomplete="false" spellcheck="false" placeholder="Spiked Gloves, Kaom's Heart, etc..." />
+                    <a href="#" class="execute-search icon-search"></a>
+                </section>
+            </section>
+            <section class="suggested-content-wrapper">
+                <section class="content-wrapper">
+                    <h1 class="section-title"><span>Class Builder</span></h1>
+                    <section class="classes">
+                        <a class="class duelist" href="/classes/duelist"><span class="text">Duelist</span></a>
+                        <a class="class marauder" href="/classes/marauder"><span class="text">Marauder</span></a>
+                        <a class="class ranger" href="/classes/ranger"><span class="text">Ranger</span></a>
+                        <a class="class scion" href="/classes/scion"><span class="text">Scion</span></a>
+                        <a class="class shadow" href="/classes/shadow"><span class="text">Shadow</span></a>
+                        <a class="class templar" href="/classes/templar"><span class="text">Templar</span></a>
+                        <a class="class witch" href="/classes/witch"><span class="text">Witch</span></a>
+                    </section>
+                    <div class="more-info-link"><a href="/builds">View existing builds...</a></div>
+                </section>
+            </section>
+        </section>
+
+        <!-- FOOTER.HTML -->
+        <section class="footer">
+
+        </section>
+    </body>
+    <script type="text/javascript" src="js/embers.js"></script>
+    <script type="text/javascript">
+        const canvas = document.getElementById('canvas'),
+              embers = new EmberEffect(canvas, 50);
+        
+        document.querySelector('.search-wrapper input').focus();
+    </script>
+</html>

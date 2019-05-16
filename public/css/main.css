@@ -1,35 +1,275 @@
+@import 'reset.css';
+
+@import 'fonts.css';
+
+@import 'general.css';
+
+@import 'header.css';
+
 /* ---------------------------------
-# CSS Reset
+# General Elements
 ----------------------------------------------- */
 
 html {
-    color: #000;
-    background: #fff;
+    height: 100%;
+    width: 100%;
+    font-family: Montserrat, sans-serif;
+    background-color: #373741;
+    color: #ccc;
 }
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
-pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
-    margin: 0;
-    padding: 0;
-}
-fieldset, img {
-    border: 0;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-size: 100%;
-    font-weight: normal;
-}
-input, textarea, select {
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-}
-input, textarea ,select {
-    *font-size: 100%;
-}
-*:focus {
-    outline: none;
+
+a {
+    color: #fff;
+    text-decoration: none;
 }
 
 /* ---------------------------------
-# General
+# General Classes
 ----------------------------------------------- */
+
+.content-wrapper {
+    position: relative;
+    max-width: 1200px; /* MediaQuery that relies on this max-width */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: lighter;
+    position: relative;
+}
+.section-title:before {
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid #777;
+    position: absolute;
+    top: calc(50% + 2px);
+    left: 0;
+}
+.section-title span {
+    position: relative;
+    padding: 10px 30px 10px 0px;
+    background-color: #373741;
+    color: #aaa;
+    z-index: 10;
+}
+
+.more-info-link {
+    text-align: right;
+    text-decoration: underline;
+}
+
+/* ---------------------------------
+# Header Classes
+----------------------------------------------- */
+
+.header {
+    position: relative;
+    box-shadow: 0px 3px  7px  rgba(0,0,0,0.35),
+                0px 10px 50px rgba(0,0,0,0.55);
+    z-index: 10;
+}
+
+.header .top-bar,
+.header .bottom-bar {
+    position: relative;
+    width: 100%;
+}
+
+.header .content-wrapper {
+    padding-left: 120px;
+}
+
+.top-bar {
+    z-index: 10;
+    box-shadow: 0px 3px 7px rgba(0,0,0,0.05), 0px 10px 50px rgba(0,0,0,0.25);
+    background-color: #41414a;
+}
+
+.top-bar .title a {
+    display: inline-block;
+    padding: 10px 0;
+    margin-right: 5px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.top-bar .title a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100px;
+    background-image: url('../img/logo.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.top-bar .title span {
+    color: #aaa;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+.bottom-bar {
+    background-color: #373741;
+}
+
+.bottom-bar .navigation {
+    margin-left: -10px;
+}
+
+.bottom-bar .navigation a {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    color: #aaa;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    padding: 20px 10px;
+}
+
+.bottom-bar .navigation a:hover {
+    color: #fff;
+}
+
+@media only screen and (max-width: 1400px) {
+    .header .content-wrapper {
+        padding-left: 20px;
+    }
+    .header .top-bar .content-wrapper {
+        padding-left: 65px;
+        max-width: 1155px; /* .content-wrapper max width adjusted for padding increase */
+    }
+    .top-bar .title a:before {
+        content: '';
+        left: 13px;
+        height: 45px;
+        width: 45px;
+    }
+}
+
+/* ---------------------------------
+# Landing Page
+----------------------------------------------- */
+
+.landing-search {
+    position: relative;
+    padding: 120px 0;
+    text-align: center;
+    width: 100%;
+    background-color: #21212a;
+    background-image: url('../img/bg-map.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: fill;
+}
+
+.landing-search .canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.landing-search .search-wrapper {
+    position: relative;
+    display: inline-block;
+    z-index: 10;
+    box-shadow: 0px 3px 7px rgba(0,0,0,0.65), 0px 10px 50px rgba(0,0,0,0.95);
+    font-size: 18px;
+}
+
+.landing-search .search-wrapper input {
+    vertical-align: middle;
+    height: 50px;
+    padding: 0 15px;
+    line-height: 50px;
+    min-width: 400px;
+    background-color: #21212a;
+    border: 0;
+    color: #fff;
+}
+
+::placeholder {
+    color: #aaa;
+}
+
+.landing-search .search-wrapper a {
+    vertical-align: middle;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-color: #373741;
+    line-height: 50px;
+    margin-left: -8px;
+}
+
+.suggested-content-wrapper {
+    padding-top: 20px;
+}
+
+.suggested-content-wrapper .classes {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.suggested-content-wrapper .classes .class {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    margin-bottom: 20px;
+    top: 0;
+    text-align: center;
+    background-color: #25252c;
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    transition: top .1s linear;
+    filter: drop-shadow(0px 3px 7px rgba(0,0,0,0.1)) drop-shadow(0px 3px 27px rgba(0,0,0,0.05));
+    border: 5px solid transparent;
+}
+.suggested-content-wrapper .classes .class:hover {
+    top: -5px;
+}
+.suggested-content-wrapper .classes .class .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 15px);
+    padding: 10px 0 10px 15px;
+    background-color: #41414a;
+    text-align: left;
+}
+
+.suggested-content-wrapper .classes .class .text:before {
+    content: "\ea0a";
+    font-family: 'icomoon' !important;
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #41414a;
+    transition: color .3s ease, background-color .3s ease;
+}
+
+.suggested-content-wrapper .classes .class:hover .text:before {
+    background-color: #ff8000;
+    color: #fff;
+}
+
+.suggested-content-wrapper .classes .class.duelist  { background-image: url('../img/art/duelist.png');  }
+.suggested-content-wrapper .classes .class.marauder { background-image: url('../img/art/marauder.png'); }
+.suggested-content-wrapper .classes .class.ranger   { background-image: url('../img/art/ranger.png');   }
+.suggested-content-wrapper .classes .class.scion    { background-image: url('../img/art/scion.png');    }
+.suggested-content-wrapper .classes .class.shadow   { background-image: url('../img/art/shadow.png');   }
+.suggested-content-wrapper .classes .class.templar  { background-image: url('../img/art/templar.png');  }
+.suggested-content-wrapper .classes .class.witch    { background-image: url('../img/art/witch.png');    }
