@@ -43,7 +43,7 @@ a {
     content: '';
     width: 100%;
     height: 1px;
-    background-image: linear-gradient(to right, rgba(119,119,119,0.4), rgba(119,119,119,0.4));
+    background-color: rgba(255,255,255,0.1);
     position: absolute;
     top: calc(50% + 2px);
     left: 0;
@@ -58,12 +58,20 @@ a {
 
 .more-info-link {
     text-align: right;
-    text-decoration: underline;
+}
+.more-info-link a {
+    display: inline-block;
+    padding: 10px 15px 10px 45px;
+    background-color: #b33834;
+    border-bottom: 1px solid #cc524e;
+    color: #FFF;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 40px 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 40px 100%);
 }
 
 .flex {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -94,7 +102,7 @@ a {
 }
 
 .header .content-wrapper {
-    padding-left: 120px;
+    padding-left: 140px;
 }
 
 .top-bar {
@@ -109,13 +117,14 @@ a {
     margin-right: 5px;
     font-size: 20px;
     color: #fff;
+    font-weight: lighter;
 }
 
 .top-bar .title a:before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: 20px;
     height: 100px;
     width: 100px;
     background-image: url('../img/logo.png');
@@ -142,28 +151,14 @@ a {
     display: inline-block;
     position: relative;
     margin-right: 10px;
-    color: #aaa;
+    color: #ddd;
+    text-transform: lowercase;
+    font-variant: small-caps;
     padding: 20px 10px;
 }
 
 .bottom-bar .navigation a:hover {
     color: #fff;
-}
-
-@media only screen and (max-width: 1400px) {
-    .header .content-wrapper {
-        padding-left: 20px;
-    }
-    .header .top-bar .content-wrapper {
-        padding-left: 65px;
-        max-width: 1155px; /* .content-wrapper max width adjusted for padding increase */
-    }
-    .top-bar .title a:before {
-        content: '';
-        left: 13px;
-        height: 45px;
-        width: 45px;
-    }
 }
 
 /* ---------------------------------
@@ -198,17 +193,24 @@ a {
 .landing-search .search-wrapper {
     position: relative;
     display: inline-block;
+    text-align: center;
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    max-width: 650px;
+    min-width: 450px;
     z-index: 10;
-    box-shadow: 0px 3px 7px rgba(0,0,0,0.65), 0px 10px 50px rgba(0,0,0,0.95);
     font-size: 18px;
+    margin: 0 20px;
+    box-shadow: 0px 3px 7px rgba(0,0,0,0.65), 0px 10px 50px rgba(0,0,0,0.95);
 }
 
 .landing-search .search-wrapper input {
     vertical-align: middle;
+    text-align: left;
     height: 50px;
     padding: 0 15px;
     line-height: 50px;
-    min-width: 400px;
+    width: calc(100% - 50px);
     background-color: #21212a;
     border: 0;
     color: #fff;
@@ -229,7 +231,7 @@ a {
 }
 
 .suggested-content-wrapper {
-    padding-top: 20px;
+    padding: 20px 0;
 }
 
 .suggested-content-wrapper .classes {
@@ -277,19 +279,63 @@ a {
 }
 
 .suggested-content-wrapper .classes .class:hover .text:before {
-    background-color: #ff8000;
+    background-color: #b33834;
     color: #fff;
 }
 
-.suggested-content-wrapper .classes .class.duelist  { background-image: url('../img/art/duelist.png');  }
-.suggested-content-wrapper .classes .class.marauder { background-image: url('../img/art/marauder.png'); }
-.suggested-content-wrapper .classes .class.ranger   { background-image: url('../img/art/ranger.png');   }
-.suggested-content-wrapper .classes .class.scion    { background-image: url('../img/art/scion.png');    }
-.suggested-content-wrapper .classes .class.shadow   { background-image: url('../img/art/shadow.png');   }
-.suggested-content-wrapper .classes .class.templar  { background-image: url('../img/art/templar.png');  }
-.suggested-content-wrapper .classes .class.witch    { background-image: url('../img/art/witch.png');    }
+.suggested-content-wrapper .classes .class.duelist  { background-image: url('../img/art/class/duelist.png');  }
+.suggested-content-wrapper .classes .class.marauder { background-image: url('../img/art/class/marauder.png'); }
+.suggested-content-wrapper .classes .class.ranger   { background-image: url('../img/art/class/ranger.png');   }
+.suggested-content-wrapper .classes .class.scion    { background-image: url('../img/art/class/scion.png');    }
+.suggested-content-wrapper .classes .class.shadow   { background-image: url('../img/art/class/shadow.png');   }
+.suggested-content-wrapper .classes .class.templar  { background-image: url('../img/art/class/templar.png');  }
+.suggested-content-wrapper .classes .class.witch    { background-image: url('../img/art/class/witch.png');    }
 
+.build-list .build {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #41414a;
+}
 
+.build-list .build > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.build-list .build .ascendancy {
+    width: 150px;
+    height: 105px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.build-list .build .details {
+    width: calc(100% - 160px);
+}
+.build-list .build .details > a,
+.build-list .build .details > div {
+    display: block;
+    padding: 7px 10px;
+}
+
+.build-list .build .ascendancy.ascendant    { background-image: url('../img/art/ascendancy/ascendant.png');    }
+.build-list .build .ascendancy.assassin     { background-image: url('../img/art/ascendancy/assassin.png');     }
+.build-list .build .ascendancy.berserker    { background-image: url('../img/art/ascendancy/berserker.png');    }
+.build-list .build .ascendancy.champion     { background-image: url('../img/art/ascendancy/champion.png');     }
+.build-list .build .ascendancy.chieftain    { background-image: url('../img/art/ascendancy/chieftain.png');    }
+.build-list .build .ascendancy.deadeye      { background-image: url('../img/art/ascendancy/deadeye.png');      }
+.build-list .build .ascendancy.elementalist { background-image: url('../img/art/ascendancy/elementalist.png'); }
+.build-list .build .ascendancy.gladiator    { background-image: url('../img/art/ascendancy/gladiator.png');    }
+.build-list .build .ascendancy.guardian     { background-image: url('../img/art/ascendancy/guardian.png');     }
+.build-list .build .ascendancy.hierophant   { background-image: url('../img/art/ascendancy/hierophant.png');   }
+.build-list .build .ascendancy.inquisitor   { background-image: url('../img/art/ascendancy/inquisitor.png');   }
+.build-list .build .ascendancy.juggernaut   { background-image: url('../img/art/ascendancy/juggernaut.png');   }
+.build-list .build .ascendancy.necromancer  { background-image: url('../img/art/ascendancy/necromancer.png');  }
+.build-list .build .ascendancy.occultist    { background-image: url('../img/art/ascendancy/occultist.png');    }
+.build-list .build .ascendancy.pathfinder   { background-image: url('../img/art/ascendancy/pathfinder.png');   }
+.build-list .build .ascendancy.raider       { background-image: url('../img/art/ascendancy/raider.png');       }
+.build-list .build .ascendancy.saboteur     { background-image: url('../img/art/ascendancy/saboteur.png');     }
+.build-list .build .ascendancy.slayer       { background-image: url('../img/art/ascendancy/slayer.png');       }
+.build-list .build .ascendancy.trickster    { background-image: url('../img/art/ascendancy/trickster.png');    }
 
 
 /* ---------------------------------
