@@ -29,14 +29,13 @@
             <section class="landing-search">
                 <canvas id="canvas" class="canvas"></canvas>
                 <section class="search-wrapper">
-                    <input type="text" autocomplete="false" spellcheck="false" placeholder="Spiked Gloves, Kaom's Heart, etc..." />
-                    <a href="#" class="execute-search icon-search"></a>
+                    <input type="text" id="search-input" autocomplete="false" spellcheck="false" placeholder="Spiked Gloves, Kaom's Heart, etc..." />
+                    <a href="#" id="search-button" class="execute-search icon-search"></a>
                 </section>
             </section>
-            <section class="suggested-content-wrapper">
+            <section class="padding">
                 <section class="content-wrapper">
-                    <!--h1 class="section-title"><span>Class Builder</span></h1-->
-                    <section class="classes flex">
+                    <section class="classes">
                         <a class="class duelist" href="/classes/duelist"><span class="text">Duelist</span></a>
                         <a class="class marauder" href="/classes/marauder"><span class="text">Marauder</span></a>
                         <a class="class ranger" href="/classes/ranger"><span class="text">Ranger</span></a>
@@ -45,12 +44,14 @@
                         <a class="class templar" href="/classes/templar"><span class="text">Templar</span></a>
                         <a class="class witch" href="/classes/witch"><span class="text">Witch</span></a>
                     </section>
-                    <div class="more-info-link"><a href="/builds/skill">View builds by skill...</a></div>
+                    <div class="text-right">
+                        <a class="stylized-link" href="/builds/skill">View builds by skill...</a>
+                    </div>
                 </section>
                 <section class="content-wrapper">
                     <section class="flex">
                         <section class="build-list">
-                            <h1 class="section-title"><span>Popular Builds</span></h1>
+                            <h1 class="section-title"><span>Popular Ascendancies</span></h1>
                             <div class="build">
                                 <div class="ascendancy slayer"></div>
                                 <div class="details">
@@ -83,10 +84,12 @@
                                     <div class="creator">Created by <a href="#">someUser32</a></div>
                                 </div>
                             </div>
-                            <div class="more-info-link"><a href="/builds/popular">View more popular builds...</a></div>
+                            <div class="text-right">
+                                <a class="stylized-link" href="/builds/skill">View builds by popularity...</a>
+                            </div>
                         </section>
                         <section class="build-list">
-                            <h1 class="section-title"><span>Recent Builds</span></h1>
+                            <h1 class="section-title"><span>Popular Skills</span></h1>
                             <div class="build">
                                 <div class="ascendancy berserker"></div>
                                 <div class="details">
@@ -111,7 +114,9 @@
                                     <div class="creator">Created by <a href="#">someUser32</a></div>
                                 </div>
                             </div>
-                            <div class="more-info-link"><a href="/builds/recent">View more recent builds...</a></div>
+                            <div class="text-right">
+                                <a class="stylized-link" href="/builds/skill">View more recent builds...</a>
+                            </div>
                         </section>
                     </section>
                 </section>

@@ -28,9 +28,17 @@ a {
 
 .content-wrapper {
     position: relative;
-    max-width: 1200px; /* MediaQuery that relies on this max-width */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.padding {
+    padding: 20px 0;
+}
+
+.text-right {
+    text-align: right;
 }
 
 .section-title {
@@ -49,24 +57,20 @@ a {
     left: 0;
 }
 .section-title span {
+    z-index: 10;
     position: relative;
     padding: 10px 20px 10px 0px;
     background-color: #373741;
     color: #aaa;
-    z-index: 10;
 }
 
-.more-info-link {
-    text-align: right;
-}
-.more-info-link a {
+.stylized-link {
     display: inline-block;
     padding: 10px 15px 10px 45px;
-    background-color: #b33834;
-    border-bottom: 1px solid #cc524e;
-    color: #FFF;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 40px 100%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 40px 100%);
+    background-color: #b33834;
+    color: #FFF;
 }
 
 .flex {
@@ -85,7 +89,7 @@ a {
 }
 
 /* ---------------------------------
-# Header Classes
+# Header
 ----------------------------------------------- */
 
 .header {
@@ -162,7 +166,7 @@ a {
 }
 
 /* ---------------------------------
-# Landing Page
+# Landing Page / Search / Canvas
 ----------------------------------------------- */
 
 .content {
@@ -172,9 +176,9 @@ a {
 
 .landing-search {
     position: relative;
-    padding: 120px 0;
-    text-align: center;
     width: 100%;
+    padding: 120px 0;
+
     background-color: #21212a;
     background-image: url('../img/bg-map.png');
     background-repeat: no-repeat;
@@ -190,72 +194,80 @@ a {
     height: 100%;
 }
 
-.landing-search .search-wrapper {
+.search-wrapper {
     position: relative;
-    display: inline-block;
-    text-align: center;
-    width: calc(100% - 40px);
-    margin: 0 20px;
-    max-width: 650px;
-    min-width: 450px;
     z-index: 10;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    
+    width: calc(100% - 40px);
+    max-width: 600px;
+    margin: 0 auto;
+
     font-size: 18px;
-    margin: 0 20px;
     box-shadow: 0px 3px 7px rgba(0,0,0,0.65), 0px 10px 50px rgba(0,0,0,0.95);
 }
 
-.landing-search .search-wrapper input {
-    vertical-align: middle;
-    text-align: left;
+.search-wrapper input {
     height: 50px;
-    padding: 0 15px;
-    line-height: 50px;
     width: calc(100% - 50px);
-    background-color: #21212a;
+    padding: 0 15px;
+
+    text-align: left;
+    vertical-align: middle;
+    line-height: 50px;
     border: 0;
+    background-color: #21212a;
     color: #fff;
+}
+
+.search-wrapper a {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    background-color: #373741;
 }
 
 ::placeholder {
     color: #aaa;
 }
 
-.landing-search .search-wrapper a {
-    vertical-align: middle;
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    background-color: #373741;
-    line-height: 50px;
-    margin-left: -8px;
-}
+/* ---------------------------------
+# Class Builds
+----------------------------------------------- */
 
-.suggested-content-wrapper {
-    padding: 20px 0;
-}
-
-.suggested-content-wrapper .classes {
+.classes {
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
-.suggested-content-wrapper .classes .class {
+.classes .class {
     position: relative;
+    top: 0;
+
     width: 150px;
     height: 200px;
     margin-bottom: 20px;
-    top: 0;
+
     text-align: center;
     background-color: #25252c;
     background-position: top center;
     background-size: 100% auto;
     background-repeat: no-repeat;
     transition: top .1s linear;
-    filter: drop-shadow(0px 3px 7px rgba(0,0,0,0.1)) drop-shadow(0px 3px 27px rgba(0,0,0,0.05));
-    border: 5px solid transparent;
+    box-shadow: 0px 3px 7px rgba(0,0,0,0.05), 0px 10px 50px rgba(0,0,0,0.25);
 }
-.suggested-content-wrapper .classes .class:hover {
+.classes .class:hover {
     top: -5px;
 }
-.suggested-content-wrapper .classes .class .text {
+.classes .class .text {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -265,7 +277,7 @@ a {
     text-align: left;
 }
 
-.suggested-content-wrapper .classes .class .text:before {
+.classes .class .text:before {
     content: "\ea0a";
     font-family: 'icomoon' !important;
     position: absolute;
@@ -278,18 +290,18 @@ a {
     transition: color .3s ease, background-color .3s ease;
 }
 
-.suggested-content-wrapper .classes .class:hover .text:before {
+.classes .class:hover .text:before {
     background-color: #b33834;
     color: #fff;
 }
 
-.suggested-content-wrapper .classes .class.duelist  { background-image: url('../img/art/class/duelist.png');  }
-.suggested-content-wrapper .classes .class.marauder { background-image: url('../img/art/class/marauder.png'); }
-.suggested-content-wrapper .classes .class.ranger   { background-image: url('../img/art/class/ranger.png');   }
-.suggested-content-wrapper .classes .class.scion    { background-image: url('../img/art/class/scion.png');    }
-.suggested-content-wrapper .classes .class.shadow   { background-image: url('../img/art/class/shadow.png');   }
-.suggested-content-wrapper .classes .class.templar  { background-image: url('../img/art/class/templar.png');  }
-.suggested-content-wrapper .classes .class.witch    { background-image: url('../img/art/class/witch.png');    }
+.classes .class.duelist  { background-image: url('../img/art/class/duelist.png');  }
+.classes .class.marauder { background-image: url('../img/art/class/marauder.png'); }
+.classes .class.ranger   { background-image: url('../img/art/class/ranger.png');   }
+.classes .class.scion    { background-image: url('../img/art/class/scion.png');    }
+.classes .class.shadow   { background-image: url('../img/art/class/shadow.png');   }
+.classes .class.templar  { background-image: url('../img/art/class/templar.png');  }
+.classes .class.witch    { background-image: url('../img/art/class/witch.png');    }
 
 .build-list .build {
     width: 100%;
